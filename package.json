@@ -1,0 +1,33 @@
+{
+  "name": "spacingjs",
+  "version": "1.0.0",
+  "description": "Measure spacing between elements on webpage.",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "watch": "webpack --watch --mode development",
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenlei/spacing.git"
+  },
+  "author": "Steven Lei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevenlei/spacing/issues"
+  },
+  "homepage": "https://github.com/stevenlei/spacing#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/webpack-env": "^1.16.3",
+    "babel-loader": "^8.2.2",
+    "typescript": "^4.4.4",
+    "webpack": "^5.59.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "unpkg": "dist/bundle.js"
+}
