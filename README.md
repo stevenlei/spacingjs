@@ -7,7 +7,7 @@ A JavaScript utility for measuring the spacing between elements on webpage. This
 1. Include Spacing.js with `<script>` tag in your HTML page:
 
 ```html
-<script src="./dist/bundle.js" defer></script>
+<script src="https://unpkg.com/spacingjs" defer></script>
 ```
 
 2. Move the mouse cursor to an element, and press the <kbd>Alt</kbd> key (<kbd>⌥ Option</kbd> on a Mac).
