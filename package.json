@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stevenlei/spacing.git"
+    "url": "git+https://github.com/stevenlei/spacingjs.git"
   },
   "author": "Steven Lei",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stevenlei/spacing/issues"
+    "url": "https://github.com/stevenlei/spacingjs/issues"
   },
-  "homepage": "https://github.com/stevenlei/spacing#readme",
+  "homepage": "https://github.com/stevenlei/spacingjs#readme",
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
