@@ -160,11 +160,22 @@ function setTargetElement(): Promise<void> {
 
 function preventPageScroll(active: boolean): void {
   if (active) {
-    originalBodyOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    window.addEventListener('DOMMouseScroll', scrollingPreventDefault, false);
+    window.addEventListener('wheel', scrollingPreventDefault, {
+      passive: false,
+    });
+    window.addEventListener('mousewheel', scrollingPreventDefault, {
+      passive: false,
+    });
   } else {
-    document.body.style.overflow = originalBodyOverflow;
+    window.removeEventListener('DOMMouseScroll', scrollingPreventDefault);
+    window.removeEventListener('wheel', scrollingPreventDefault);
+    window.removeEventListener('mousewheel', scrollingPreventDefault);
   }
+}
+
+function scrollingPreventDefault(e: Event): void {
+  e.preventDefault();
 }
 
 export default Spacing;
