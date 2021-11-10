@@ -1,6 +1,6 @@
 {
   "name": "spacingjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Measure spacing between elements on webpage.",
   "main": "./src/index.ts",
   "scripts": {
@@ -29,5 +29,6 @@
     "webpack": "^5.59.0",
     "webpack-cli": "^4.9.1"
   },
-  "unpkg": "dist/bundle.js"
+  "unpkg": "dist/bundle.js",
+  "jsdelivr": "dist/bundle.js"
 }
