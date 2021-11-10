@@ -24,13 +24,13 @@
   <script src="//cdn.jsdelivr.net/npm/spacingjs" defer></script>
   ```
 
-2. 将游标移动在一个元素上，然后按下 <kbd>Alt</kbd> 键（Windows）或 <kbd>⌥ Option</kbd> 键（Mac）。
+2. 将鼠标移动到一个元素上，然后按下 <kbd>Alt</kbd> 键（Windows）或 <kbd>⌥ Option</kbd> 键（Mac）。
 
-3. 将游标移动到其他元素上，即会显示相关的测量结果。
+3. 将鼠标移动到其他元素上，就会显示相关的测量结果。
 
 ## 参与开发
 
-欢迎 Fork 这个 Repo 进行开发，并提交 Pull Requests。在 [GitHub Issues](https://github.com/stevenlei/spacingjs/issues) 回报 Bug，在 [GitHub Discussions](https://github.com/stevenlei/spacingjs/discussions) 讨论功能／想法／问题。
+欢迎 Fork 这个 Repo 进行开发，并提交 Pull Requests。在 [GitHub Issues](https://github.com/stevenlei/spacingjs/issues) 汇报 Bug，在 [GitHub Discussions](https://github.com/stevenlei/spacingjs/discussions) 讨论功能／想法／问题。
 
 ## 授权协议
 
