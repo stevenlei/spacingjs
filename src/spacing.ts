@@ -19,7 +19,8 @@ const Spacing: SpacingType = {
     }
 
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Alt') {
+      if (e.key === 'Alt' && !active) {
+        e.preventDefault();
         active = true;
         setSelectedElement();
         preventPageScroll(true);
