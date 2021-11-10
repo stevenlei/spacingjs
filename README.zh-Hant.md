@@ -15,10 +15,14 @@
 ## 如何使用
 
 1. 在 HTML 頁面中透過 `<script>` 標籤加載 Spacing.js：
-
-```html
-<script src="//unpkg.com/spacingjs" defer></script>
-```
+  - UNPKG CDN:
+  ```html
+  <script src="//unpkg.com/spacingjs" defer></script>
+  ```
+  - jsDelivr CDN:
+  ```html
+  <script src="//cdn.jsdelivr.net/npm/spacingjs" defer></script>
+  ```
 
 2. 將遊標移動在一個元素上，然後按下 <kbd>Alt</kbd> 鍵（Windows）或 <kbd>⌥ Option</kbd> 鍵（Mac）。
 

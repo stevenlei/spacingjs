@@ -15,14 +15,18 @@ Read this document in other languages: [English](README.md), [繁體中文](READ
 ## How to use
 
 1. Include Spacing.js with `<script>` tag in your HTML page:
+  - UNPKG CDN:
+  ```html
+  <script src="//unpkg.com/spacingjs" defer></script>
+  ```
+  - jsDelivr CDN:
+  ```html
+  <script src="//cdn.jsdelivr.net/npm/spacingjs" defer></script>
+  ```
 
-```html
-<script src="//unpkg.com/spacingjs" defer></script>
-```
+2. Move your mouse cursor to an element, and press <kbd>Alt</kbd> on Windows or <kbd>⌥ Option</kbd> on a Mac.
 
-1. Move your mouse cursor to an element, and press <kbd>Alt</kbd> on Windows or <kbd>⌥ Option</kbd> on a Mac.
-
-2. Move your mouse cursor to another element, the measurement results will be there.
+3. Move your mouse cursor to another element, the measurement results will be there.
 
 ## Contribute
 
