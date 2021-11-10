@@ -1,18 +1,28 @@
 # Spacing JS
 
-A JavaScript utility for measuring the spacing between elements on webpage. This is supposed to be used during development only.
+[![npm version](https://img.shields.io/npm/v/spacingjs.svg)](https://www.npmjs.com/package/@stevenlei/spacingjs)
+![GitHub Stars](https://img.shields.io/github/stars/stevenlei/spacingjs)
+![Github Forks](https://img.shields.io/github/forks/stevenlei/spacingjs)
+![GitHub Open Issues](https://img.shields.io/github/issues/stevenlei/spacingjs)
+![License](https://img.shields.io/github/license/stevenlei/spacingjs)
+
+A JavaScript utility for measuring the spacing between elements on webpage. This is supposed to be used during development only. [Try this out](https://spacingjs.com).
+
+![](screenshot.png)
+
+Read this document in other languages: [English](README.md), [繁體中文](README.zh-Hant.md), [简体中文](README.zh-Hans.md).
 
 ## How to use
 
 1. Include Spacing.js with `<script>` tag in your HTML page:
 
 ```html
-<script src="https://unpkg.com/spacingjs" defer></script>
+<script src="//unpkg.com/spacingjs" defer></script>
 ```
 
-2. Move the mouse cursor to an element, and press the <kbd>Alt</kbd> key (<kbd>⌥ Option</kbd> on a Mac).
+1. Move your mouse cursor to an element, and press <kbd>Alt</kbd> on Windows or <kbd>⌥ Option</kbd> on a Mac.
 
-3. Move to another element, the measurement results will be there.
+2. Move your mouse cursor to another element, the measurement results will be there.
 
 ## Contribute
 
