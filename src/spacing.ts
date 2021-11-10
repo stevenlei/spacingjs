@@ -98,10 +98,10 @@ const Spacing: SpacingType = {
             outside = true;
           }
 
-          placeMark(selected, target, `top`, `${top}px`, outside);
-          placeMark(selected, target, `bottom`, `${bottom}px`, outside);
-          placeMark(selected, target, `left`, `${left}px`, outside);
-          placeMark(selected, target, `right`, `${right}px`, outside);
+          placeMark(selected, target, 'top', `${top}px`, outside);
+          placeMark(selected, target, 'bottom', `${bottom}px`, outside);
+          placeMark(selected, target, 'left', `${left}px`, outside);
+          placeMark(selected, target, 'right', `${right}px`, outside);
         }
       });
     });
@@ -140,17 +140,17 @@ function setTargetElement(): Promise<void> {
     if (active && el !== selectedElement && el !== targetElement) {
       targetElement = el;
 
-      clearPlaceholderElement(`target`);
+      clearPlaceholderElement('target');
 
       let rect = targetElement.getBoundingClientRect();
 
       createPlaceholderElement(
-        `target`,
+        'target',
         rect.width,
         rect.height,
         rect.top,
         rect.left,
-        `blue`
+        'blue'
       );
       resolve();
     }
