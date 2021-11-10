@@ -22,6 +22,7 @@ export function createPlaceholderElement(
   placeholder.style.left = `${left - 1}px`;
   placeholder.style.pointerEvents = 'none';
   placeholder.style.zIndex = '9999';
+  placeholder.style.boxSizing = 'content-box';
   document.body.appendChild(placeholder);
 }
 

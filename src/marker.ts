@@ -30,6 +30,7 @@ function createLine(
   marker.style.top = `${top}px`;
   marker.style.left = `${left}px`;
   marker.style.zIndex = '9998';
+  marker.style.boxSizing = 'content-box';
 
   let value: HTMLSpanElement = document.createElement('span');
   value.classList.add(`spacing-js-value`);
@@ -48,6 +49,7 @@ function createLine(
   value.style.zIndex = '10000';
   value.style.pointerEvents = 'none';
   value.innerText = text;
+  value.style.boxSizing = 'content-box';
 
   if (border === 'x') {
     // Prevent the badge moved outside the screen
