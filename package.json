@@ -1,6 +1,6 @@
 {
   "name": "spacingjs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Measure spacing between elements on webpage.",
   "main": "./src/index.ts",
   "scripts": {
