@@ -1,0 +1,14 @@
+{
+    "name": "SpacingJS",
+    "manifest_version": 3,
+    "version": "0.1",
+    "description": "An Chrome extension for measuring the spacing between elements on webpage.",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {}
+}

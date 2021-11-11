@@ -7,7 +7,8 @@
     "build": "webpack --mode development",
     "prod": "webpack --mode production",
     "watch": "webpack --watch --mode development",
-    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'"
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
+    "ext": "cp dist/bundle.js extensions/chrome/bundle.js"
   },
   "repository": {
     "type": "git",
