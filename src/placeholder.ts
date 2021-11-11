@@ -24,6 +24,36 @@ export function createPlaceholderElement(
   placeholder.style.zIndex = '9999';
   placeholder.style.boxSizing = 'content-box';
   document.body.appendChild(placeholder);
+
+  let dimension: HTMLSpanElement = document.createElement('span');
+  dimension.style.background = color;
+  dimension.style.position = 'fixed';
+  dimension.style.display = 'inline-block';
+  dimension.style.color = '#fff';
+  dimension.style.padding = '2px 4px';
+  dimension.style.fontSize = '10px';
+
+  let arrow = '';
+
+  let topOffset = top;
+
+  if (top < 20) {
+    if (top < 0) {
+      topOffset = 0;
+      arrow = '↑ '; // Top-Left corner is offscreen
+    }
+    dimension.style.borderRadius = '2px 0 2px 0';
+  } else {
+    dimension.style.transform = 'translateY(calc(-100% + 2px))';
+    dimension.style.borderRadius = '2px 2px 0 0';
+  }
+
+  dimension.style.top = `${topOffset - 1}px`;
+  dimension.style.left = `${left - 1}px`;
+  dimension.innerText = `${arrow} ${Math.round(width)}px × ${Math.round(
+    height
+  )}px`;
+  placeholder.appendChild(dimension);
 }
 
 export function clearPlaceholderElement(type: PlaceholderType): void {
