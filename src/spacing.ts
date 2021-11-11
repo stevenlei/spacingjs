@@ -119,7 +119,7 @@ function setSelectedElement(): void {
     document.querySelectorAll<HTMLElement>(':hover');
   let el: HTMLElement = elements[elements.length - 1];
 
-  if (el !== selectedElement) {
+  if (el != null && el !== selectedElement) {
     selectedElement = el;
 
     clearPlaceholderElement('selected');
