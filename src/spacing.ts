@@ -48,6 +48,7 @@ function keyUpHandler(e: KeyboardEvent) {
 }
 
 function cursorMovedHandler(e: MouseEvent) {
+  if (!active) return;
 
   setTargetElement().then(() => {
     if (selectedElement != null && targetElement != null) {
