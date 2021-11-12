@@ -1,14 +1,17 @@
 {
-    "name": "SpacingJS",
-    "manifest_version": 3,
-    "version": "0.1",
-    "description": "An Chrome extension for measuring the spacing between elements on webpage.",
-    "permissions": [
-        "activeTab",
-        "scripting"
-    ],
-    "background": {
-        "service_worker": "background.js"
-    },
-    "action": {}
+  "manifest_version": 3,
+  "name": "SpacingJS",
+  "version": "1.0.6",
+
+  "action": {},
+  "description": "Measure the spacing between elements on webpage. Hold down Alt (Windows) / Option (Mac) key, and move the cursor.",
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+
+  "author": "Steven Lei",
+  "homepage_url": "https://spacingjs.com",
+
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
