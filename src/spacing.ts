@@ -33,7 +33,7 @@ function keyDownHandler(e: KeyboardEvent) {
   }
 }
 
-function keyUpHandler(e: KeyboardEvent) {
+function keyUpHandler(e?: KeyboardEvent) {
   active = false;
 
   clearPlaceholderElement('selected');
@@ -48,6 +48,8 @@ function keyUpHandler(e: KeyboardEvent) {
 }
 
 function cursorMovedHandler(e: MouseEvent) {
+  !document.hasFocus() && keyUpHandler()
+  
   if (!active) return;
 
   setTargetElement().then(() => {
