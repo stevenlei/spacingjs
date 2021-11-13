@@ -8,7 +8,7 @@
     "prod": "webpack --mode production",
     "watch": "webpack --watch --mode development",
     "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
-    "ext": "cp dist/bundle.js extensions/chrome/bundle.js"
+    "ext": "node extensions.config.js"
   },
   "repository": {
     "type": "git",
