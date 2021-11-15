@@ -6,6 +6,7 @@ import {
 import { placeMark, removeMarks } from './marker';
 
 let active: boolean = false;
+let hoveringElement: HTMLElement | null = null;
 let selectedElement: HTMLElement | null;
 let targetElement: HTMLElement | null;
 let originalBodyOverflow: string;
@@ -48,6 +49,10 @@ function keyUpHandler(e: KeyboardEvent) {
 }
 
 function cursorMovedHandler(e: MouseEvent) {
+  if (e.composed) {
+    // Use composedPath to detect the hovering element for supporting shadow DOM
+    hoveringElement = e.composedPath()[0] as HTMLElement
+  }
   if (!active) return;
 
   setTargetElement().then(() => {
@@ -115,13 +120,8 @@ function cursorMovedHandler(e: MouseEvent) {
 }
 
 function setSelectedElement(): void {
-  let elements: NodeListOf<HTMLElement> =
-    document.querySelectorAll<HTMLElement>(':hover');
-  let el: HTMLElement = elements[elements.length - 1];
-
-  if (el != null && el !== selectedElement) {
-    selectedElement = el;
-
+  if (hoveringElement != null && hoveringElement !== selectedElement) {
+    selectedElement = hoveringElement;
     clearPlaceholderElement('selected');
 
     let rect = selectedElement.getBoundingClientRect();
@@ -139,12 +139,8 @@ function setSelectedElement(): void {
 
 function setTargetElement(): Promise<void> {
   return new Promise((resolve, reject) => {
-    let elements: NodeListOf<HTMLElement> =
-      document.querySelectorAll<HTMLElement>(':hover');
-    let el: HTMLElement = elements[elements.length - 1];
-
-    if (active && el !== selectedElement && el !== targetElement) {
-      targetElement = el;
+    if (active && hoveringElement && hoveringElement !== selectedElement && hoveringElement !== targetElement) {
+      targetElement = hoveringElement;
 
       clearPlaceholderElement('target');
 
