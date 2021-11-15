@@ -49,9 +49,12 @@ function keyUpHandler(e: KeyboardEvent) {
 }
 
 function cursorMovedHandler(e: MouseEvent) {
-  if (e.composed) {
+  if (e.composedPath) {
     // Use composedPath to detect the hovering element for supporting shadow DOM
     hoveringElement = e.composedPath()[0] as HTMLElement
+  } else {
+    // Fallback if not support composedPath
+    hoveringElement = e.target as HTMLElement
   }
   if (!active) return;
 
@@ -120,7 +123,7 @@ function cursorMovedHandler(e: MouseEvent) {
 }
 
 function setSelectedElement(): void {
-  if (hoveringElement != null && hoveringElement !== selectedElement) {
+  if (hoveringElement && hoveringElement !== selectedElement) {
     selectedElement = hoveringElement;
     clearPlaceholderElement('selected');
 
