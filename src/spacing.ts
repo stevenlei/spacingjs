@@ -9,6 +9,8 @@ let active: boolean = false;
 let hoveringElement: HTMLElement | null = null;
 let selectedElement: HTMLElement | null;
 let targetElement: HTMLElement | null;
+let delayedDismiss: boolean = false;
+let delayedRef: ReturnType<typeof setTimeout> | null = null;
 import { Spacing as SpacingType } from './type';
 
 const Spacing: SpacingType = {
@@ -25,19 +27,43 @@ const Spacing: SpacingType = {
 };
 
 function keyDownHandler(e: KeyboardEvent) {
+  if (delayedDismiss) {
+    cleanUp();
+    if (delayedRef) {
+      clearTimeout(delayedRef);
+      delayedRef = null;
+    }
+  }
+
   if (e.key === 'Alt' && !active) {
     e.preventDefault();
     active = true;
+
     setSelectedElement();
     preventPageScroll(true);
   }
+
+  if (e.shiftKey) delayedDismiss = true;
 }
 
 function keyUpHandler(e: KeyboardEvent) {
-  active = false;
+  if (e.key === 'Alt' && active) {
+    active = false;
 
+    delayedRef = setTimeout(
+      () => {
+        cleanUp();
+      },
+      delayedDismiss ? 3000 : 0
+    );
+  }
+}
+
+function cleanUp(): void {
   clearPlaceholderElement('selected');
   clearPlaceholderElement('target');
+
+  delayedDismiss = false;
 
   selectedElement = null;
   targetElement = null;
