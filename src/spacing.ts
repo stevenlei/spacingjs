@@ -9,7 +9,6 @@ let active: boolean = false;
 let hoveringElement: HTMLElement | null = null;
 let selectedElement: HTMLElement | null;
 let targetElement: HTMLElement | null;
-let originalBodyOverflow: string;
 import { Spacing as SpacingType } from './type';
 
 const Spacing: SpacingType = {
@@ -51,10 +50,10 @@ function keyUpHandler(e: KeyboardEvent) {
 function cursorMovedHandler(e: MouseEvent) {
   if (e.composedPath) {
     // Use composedPath to detect the hovering element for supporting shadow DOM
-    hoveringElement = e.composedPath()[0] as HTMLElement
+    hoveringElement = e.composedPath()[0] as HTMLElement;
   } else {
     // Fallback if not support composedPath
-    hoveringElement = e.target as HTMLElement
+    hoveringElement = e.target as HTMLElement;
   }
   if (!active) return;
 
@@ -142,7 +141,12 @@ function setSelectedElement(): void {
 
 function setTargetElement(): Promise<void> {
   return new Promise((resolve, reject) => {
-    if (active && hoveringElement && hoveringElement !== selectedElement && hoveringElement !== targetElement) {
+    if (
+      active &&
+      hoveringElement &&
+      hoveringElement !== selectedElement &&
+      hoveringElement !== targetElement
+    ) {
       targetElement = hoveringElement;
 
       clearPlaceholderElement('target');
