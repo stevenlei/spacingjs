@@ -15,18 +15,30 @@
 ## 如何使用
 
 1. 在 HTML 頁面中透過 `<script>` 標籤加載 Spacing.js：
-  - UNPKG CDN:
-  ```html
-  <script src="//unpkg.com/spacingjs" defer></script>
-  ```
-  - jsDelivr CDN:
-  ```html
-  <script src="//cdn.jsdelivr.net/npm/spacingjs" defer></script>
-  ```
+
+- UNPKG CDN:
+
+```html
+<script src="//unpkg.com/spacingjs" defer></script>
+```
+
+- jsDelivr CDN:
+
+```html
+<script src="//cdn.jsdelivr.net/npm/spacingjs" defer></script>
+```
 
 2. 將遊標移動在一個元素上，然後按下 <kbd>Alt</kbd> 鍵（Windows）或 <kbd>⌥ Option</kbd> 鍵（Mac）。
 
 3. 將遊標移動到其他元素上，即會顯示相關的測量結果。
+
+## 更多選項
+
+同時按下 <kbd>Shift</kbd> 鍵會延長測量結果的顯示，這樣我們就有足夠時間進行螢幕截圖。
+
+## Chrome 瀏覽器插件及 Tampermonkey 版本
+
+你可以在 [Chrome web store](https://chrome.google.com/webstore/detail/spacingjs/fhjegjndanjcamfldhenjnhnjheecgcc) 下載 Chrome 瀏覽器的插件版本，或透過 `npm run ext` 打包。
 
 ## 參與開發
 
