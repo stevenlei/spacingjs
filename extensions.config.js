@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const PackageJSON = require('./package.json');
-const ManifestJSON = require('./extensions/chrome/manifest.json');
 
 const resolve = (dir) => path.resolve(__dirname, dir);
 const versionReg = /(\d+\.\d+\.\d+)/g;
@@ -10,15 +9,8 @@ const currentVersion = PackageJSON.version;
 
 build();
 function build() {
-  // build to chrome
-  execSync(`cp dist/bundle.js extensions/chrome/bundle.js`);
-  // sync version
-  ManifestJSON.version = currentVersion;
-  fs.writeFileSync(
-    resolve('extensions/chrome/manifest.json'),
-    JSON.stringify(ManifestJSON, null, 2),
-    'utf8'
-  );
+  buildBrowserExtension('chrome');
+  buildBrowserExtension('firefox');
   // pre build tampermonkey
   execSync(`rm -rf extensions/tampermonkey/spacingjs_*`);
   // concat content
@@ -33,4 +25,18 @@ function build() {
   const target = `extensions/tampermonkey/spacingjs_${currentVersion}.js`;
   fs.writeFileSync(resolve(target), script, 'utf8');
   console.log('build complete!');
+}
+
+function buildBrowserExtension (target) {
+  // Copy to browser extension directory
+  execSync(`cp dist/bundle.js extensions/${target}/bundle.js`);
+  
+  // sync version
+  const ManifestJSON = require(`./extensions/${target}/manifest.json`);
+  ManifestJSON.version = currentVersion;
+  fs.writeFileSync(
+    resolve(`extensions/${target}/manifest.json`),
+    JSON.stringify(ManifestJSON, null, 2),
+    'utf8'
+  );
 }
