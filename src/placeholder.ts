@@ -6,7 +6,7 @@ export function createPlaceholderElement(
   height: number,
   top: number,
   left: number,
-  color: string
+  color: string,
 ): void {
   let placeholder: HTMLDivElement = document.createElement('div');
   placeholder.classList.add(`spacing-js-${type}-placeholder`);
@@ -50,9 +50,7 @@ export function createPlaceholderElement(
 
   dimension.style.top = `${topOffset - 1}px`;
   dimension.style.left = `${left - 1}px`;
-  dimension.innerText = `${arrow} ${Math.round(width)}px × ${Math.round(
-    height
-  )}px`;
+  dimension.innerText = `${arrow} ${Math.round(width)}px × ${Math.round(height)}px`;
   placeholder.appendChild(dimension);
 }
 
