@@ -161,16 +161,11 @@ function setSelectedElement(): void {
   if (hoveringElement && hoveringElement !== selectedElement) {
     selectedElement = hoveringElement;
     clearPlaceholderElement('selected');
-
-    let rect = selectedElement.getBoundingClientRect();
     
     createPlaceholderElement(
       'selected',
-      rect.width,
-      rect.height,
-      rect.top,
-      rect.left,
-      `red`,
+      selectedElement,
+      `red`
     );
   }
 }
@@ -187,15 +182,10 @@ function setTargetElement(): Promise<void> {
 
       clearPlaceholderElement('target');
 
-      let rect = targetElement.getBoundingClientRect();
-
       createPlaceholderElement(
         'target',
-        rect.width,
-        rect.height,
-        rect.top,
-        rect.left,
-        'blue',
+        targetElement,
+        'blue'
       );
       resolve();
     }

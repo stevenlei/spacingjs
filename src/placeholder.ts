@@ -2,12 +2,12 @@ import { PlaceholderType } from './type';
 
 export function createPlaceholderElement(
   type: PlaceholderType,
-  width: number,
-  height: number,
-  top: number,
-  left: number,
-  color: string,
+  dom: HTMLElement,
+  color: string
 ): void {
+  let { width, height, top, left } = dom.getBoundingClientRect();
+  let fontSize = window.getComputedStyle(dom).fontSize;
+
   let placeholder: HTMLDivElement = document.createElement('div');
   placeholder.classList.add(`spacing-js-${type}-placeholder`);
   placeholder.style.border = `2px solid ${color}`;
@@ -50,7 +50,8 @@ export function createPlaceholderElement(
 
   dimension.style.top = `${topOffset - 1}px`;
   dimension.style.left = `${left - 1}px`;
-  dimension.innerText = `${arrow} ${Math.round(width)}px × ${Math.round(height)}px`;
+  dimension.innerText = `${arrow} ${Math.round(width)}px × ${Math.round(height)}px
+                         ${fontSize ? `fontsize:`+fontSize : ''}`;
   placeholder.appendChild(dimension);
 }
 
