@@ -152,7 +152,7 @@ function setSelectedElement(): void {
     selectedElement = hoveringElement;
     clearPlaceholderElement('selected');
 
-    let rect = selectedElement.getBoundingClientRect();
+    const rect = selectedElement.getBoundingClientRect();
 
     createPlaceholderElement(
       'selected',
@@ -177,7 +177,7 @@ function setTargetElement(): Promise<void> {
 
       clearPlaceholderElement('target');
 
-      let rect = targetElement.getBoundingClientRect();
+      const rect = targetElement.getBoundingClientRect();
 
       createPlaceholderElement(
         'target',
