@@ -1,5 +1,6 @@
 export type Spacing = {
   start: () => void;
+  stop: () => void;
 };
 
 export type LineBorder = 'none' | 'x' | 'y';
