@@ -24,6 +24,12 @@ const Spacing: SpacingType = {
     window.addEventListener('keyup', keyUpHandler);
     window.addEventListener('mousemove', cursorMovedHandler);
   },
+
+  stop() {
+    window.removeEventListener('keydown', keyDownHandler);
+    window.removeEventListener('keyup', keyUpHandler);
+    window.removeEventListener('mousemove', cursorMovedHandler);
+  }
 };
 
 function keyDownHandler(e: KeyboardEvent) {
