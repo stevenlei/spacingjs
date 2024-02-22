@@ -7,7 +7,7 @@ version](https://img.shields.io/npm/v/spacingjs.svg)](https://www.npmjs.com/pack
 ![GitHub Open Issues](https://img.shields.io/github/issues/stevenlei/spacingjs)
 ![License](https://img.shields.io/github/license/stevenlei/spacingjs)
 
-A JavaScript utility for measuring the spacing between elements on webpage. This
+A JavaScript utility for measuring the spacing between elements on webpage. This.
 is supposed to be used during development only. [Try this
 out](https://spacingjs.com).
 
