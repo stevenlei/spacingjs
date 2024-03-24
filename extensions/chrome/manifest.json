@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SpacingJS",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "action": {},
   "description": "Measure the spacing between elements on webpage. Hold down Alt (Windows) / Option (Mac) key, and move the cursor.",
   "icons": {
@@ -11,10 +11,7 @@
   },
   "author": "Steven Lei",
   "homepage_url": "https://spacingjs.com",
-  "permissions": [
-    "activeTab",
-    "scripting"
-  ],
+  "permissions": ["activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
   }
