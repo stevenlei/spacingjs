@@ -50,8 +50,9 @@ export function createPlaceholderElement(
 
   dimension.style.top = `${topOffset - 1}px`;
   dimension.style.left = `${left - 1}px`;
-  dimension.innerText = `${arrow} ${Math.round(width)}px × ${Math.round(height)}px
-                         ${fontSize ? `fontsize:`+fontSize : ''}`;
+  dimension.innerText = `${arrow} ${Math.round(width)}px × ${Math.round(
+    height
+  )}px [${fontSize ? `font-size: ${fontSize}]` : ''}`;
   placeholder.appendChild(dimension);
 }
 

@@ -13,7 +13,6 @@ let delayedDismiss: boolean = false;
 let delayedRef: ReturnType<typeof setTimeout> | null = null;
 import { Spacing as SpacingType } from './type';
 
-
 const Spacing: SpacingType = {
   start() {
     if (!document.body) {
@@ -24,7 +23,7 @@ const Spacing: SpacingType = {
     window.addEventListener('keydown', keyDownHandler);
     window.addEventListener('keyup', keyUpHandler);
     window.addEventListener('mousemove', cursorMovedHandler);
-    window.addEventListener('mouseout',cursorLeaveHandler);
+    window.addEventListener('mouseout', cursorLeaveHandler);
   },
 };
 
@@ -37,7 +36,7 @@ function keyDownHandler(e: KeyboardEvent) {
     }
   }
 
-  if(!hoveringElement) return;
+  if (!hoveringElement) return;
 
   if (e.key === 'Alt' && !active) {
     e.preventDefault();
@@ -61,12 +60,12 @@ function keyUpHandler(e: KeyboardEvent) {
   }
 }
 
-function cursorLeaveHandler(e: MouseEvent){
+function cursorLeaveHandler(e: MouseEvent) {
   let to = e.relatedTarget as HTMLElement;
-      if (!to || to.nodeName == "HTML") {
-        hoveringElement = null
-        cleanUp();
-      }
+  if (!to || to.nodeName == 'HTML') {
+    hoveringElement = null;
+    cleanUp();
+  }
 }
 
 function cleanUp(): void {
@@ -161,12 +160,8 @@ function setSelectedElement(): void {
   if (hoveringElement && hoveringElement !== selectedElement) {
     selectedElement = hoveringElement;
     clearPlaceholderElement('selected');
-    
-    createPlaceholderElement(
-      'selected',
-      selectedElement,
-      `red`
-    );
+
+    createPlaceholderElement('selected', selectedElement, `red`);
   }
 }
 
@@ -182,11 +177,7 @@ function setTargetElement(): Promise<void> {
 
       clearPlaceholderElement('target');
 
-      createPlaceholderElement(
-        'target',
-        targetElement,
-        'blue'
-      );
+      createPlaceholderElement('target', targetElement, 'blue');
       resolve();
     }
   });
