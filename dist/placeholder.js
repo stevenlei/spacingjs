@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.clearPlaceholderElement = exports.createPlaceholderElement = void 0;
-function createPlaceholderElement(type, width, height, top, left, color) {
+function createPlaceholderElement(type, dom, color) {
+    var _a = dom.getBoundingClientRect(), width = _a.width, height = _a.height, top = _a.top, left = _a.left;
+    var fontSize = window.getComputedStyle(dom).fontSize;
     var placeholder = document.createElement('div');
     placeholder.classList.add("spacing-js-" + type + "-placeholder");
     placeholder.style.border = "2px solid " + color;
@@ -40,7 +42,7 @@ function createPlaceholderElement(type, width, height, top, left, color) {
     }
     dimension.style.top = topOffset - 1 + "px";
     dimension.style.left = left - 1 + "px";
-    dimension.innerText = arrow + " " + Math.round(width) + "px \u00D7 " + Math.round(height) + "px";
+    dimension.innerText = arrow + " " + Math.round(width) + "px \u00D7 " + Math.round(height) + "px [" + (fontSize ? "font-size: " + fontSize + "]" : '');
     placeholder.appendChild(dimension);
 }
 exports.createPlaceholderElement = createPlaceholderElement;

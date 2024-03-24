@@ -21,6 +21,7 @@ var Spacing = {
         window.addEventListener('keydown', keyDownHandler);
         window.addEventListener('keyup', keyUpHandler);
         window.addEventListener('mousemove', cursorMovedHandler);
+        window.addEventListener('mouseout', cursorLeaveHandler);
     },
     stop: function () {
         window.removeEventListener('keydown', keyDownHandler);
@@ -36,6 +37,8 @@ function keyDownHandler(e) {
             delayedRef = null;
         }
     }
+    if (!hoveringElement)
+        return;
     if (e.key === 'Alt' && !active) {
         e.preventDefault();
         active = true;
@@ -47,13 +50,20 @@ function keyDownHandler(e) {
 }
 function keyUpHandler(e) {
     if (e.key === 'Alt' && active) {
-        active = false;
         delayedRef = setTimeout(function () {
             cleanUp();
         }, delayedDismiss ? 3000 : 0);
     }
 }
+function cursorLeaveHandler(e) {
+    var to = e.relatedTarget;
+    if (!to || to.nodeName == 'HTML') {
+        hoveringElement = null;
+        cleanUp();
+    }
+}
 function cleanUp() {
+    active = false;
     (0, placeholder_1.clearPlaceholderElement)('selected');
     (0, placeholder_1.clearPlaceholderElement)('target');
     delayedDismiss = false;
@@ -111,8 +121,7 @@ function setSelectedElement() {
     if (hoveringElement && hoveringElement !== selectedElement) {
         selectedElement = hoveringElement;
         (0, placeholder_1.clearPlaceholderElement)('selected');
-        var rect = selectedElement.getBoundingClientRect();
-        (0, placeholder_1.createPlaceholderElement)('selected', rect.width, rect.height, rect.top, rect.left, "red");
+        (0, placeholder_1.createPlaceholderElement)('selected', selectedElement, "red");
     }
 }
 function setTargetElement() {
@@ -123,8 +132,7 @@ function setTargetElement() {
             hoveringElement !== targetElement) {
             targetElement = hoveringElement;
             (0, placeholder_1.clearPlaceholderElement)('target');
-            var rect = targetElement.getBoundingClientRect();
-            (0, placeholder_1.createPlaceholderElement)('target', rect.width, rect.height, rect.top, rect.left, 'blue');
+            (0, placeholder_1.createPlaceholderElement)('target', targetElement, 'blue');
             resolve();
         }
     });
