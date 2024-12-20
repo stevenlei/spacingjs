@@ -1,36 +1,38 @@
 # Spacing JS
 
-[![npm
-version](https://img.shields.io/npm/v/spacingjs.svg)](https://www.npmjs.com/package/@stevenlei/spacingjs)
+[![npm version](https://img.shields.io/npm/v/spacingjs.svg)](https://www.npmjs.com/package/@stevenlei/spacingjs)
 ![GitHub Stars](https://img.shields.io/github/stars/stevenlei/spacingjs)
 ![Github Forks](https://img.shields.io/github/forks/stevenlei/spacingjs)
 ![GitHub Open Issues](https://img.shields.io/github/issues/stevenlei/spacingjs)
 ![License](https://img.shields.io/github/license/stevenlei/spacingjs)
 
-A JavaScript utility for measuring the spacing between elements on webpage. This
-is supposed to be used during development only. [Try this
-out](https://spacingjs.com).
+A lightweight JavaScript utility for measuring spacing between elements on webpages during development. Perfect for designers and developers who need precise measurements. [Try the demo](https://spacingjs.com).
 
-![](screenshot.png)
+![SpacingJS Demo](screenshot.png)
 
-Read this document in other languages: [English](README.md), [繁體中
-文](README.zh-Hant.md), [简体中文](README.zh-Hans.md).
+🌍 Available in: [English](README.md) | [繁體中文](README.zh-Hant.md) | [简体中文](README.zh-Hans.md)
 
-## Usage
+## Installation
 
-### Import from CDN
+### Option 1: CDN
 
-Include Spacing.js with `<script>` tag in your HTML page:
+Add SpacingJS directly to your HTML:
 
 ```html
-<!-- Use `UNPKG' CDN. --->
+<!-- Using UNPKG -->
 <script src="//unpkg.com/spacingjs" defer></script>
 
-<!-- Or, use `jsDeliver` CDN. -->
+<!-- Or using jsDelivr -->
 <script src="//cdn.jsdelivr.net/npm/spacingjs" defer></script>
 ```
 
-### Import in source code
+### Option 2: NPM
+
+```bash
+npm install spacingjs
+```
+
+Then import and use it in your code:
 
 ```javascript
 import Spacing from 'spacingjs';
@@ -38,32 +40,36 @@ import Spacing from 'spacingjs';
 Spacing.start();
 ```
 
-### Front end usage
+## Usage
 
-1. Move your mouse cursor to an element, and press <kbd>Alt</kbd> on Windows or
-   <kbd>⌥ Option</kbd> on a Mac.
+1. Hover over any element on your webpage
+2. Press <kbd>Alt</kbd> (Windows) or <kbd>⌥ Option</kbd> (Mac)
+3. Move your cursor to another element to see the measurements
 
-2. Move your mouse cursor to another element, the measurement results will be
-   there.
+### Pro Tips
+- Hold <kbd>Shift</kbd> to keep measurements visible longer (great for taking screenshots)
+- Use the [Chrome Extension](https://chrome.google.com/webstore/detail/spacingjs/fhjegjndanjcamfldhenjnhnjheecgcc) for permanent access on any website
 
-## More Options
+## Browser Extension
 
-Hold down with <kbd>Shift</kbd> key will delay the dismiss of measurement
-results, so that we can take a screenshot easier.
+SpacingJS is available as a Chrome Extension:
+- 🚀 [Install from Chrome Web Store](https://chrome.google.com/webstore/detail/spacingjs/fhjegjndanjcamfldhenjnhnjheecgcc)
+- 🛠️ Build it yourself: Run `npm run ext`
 
-## Chrome Extension & Tampermonkey version
+## Contributing
 
-You can install the Chrome Extension version on the [Chrome web
-store](https://chrome.google.com/webstore/detail/spacingjs/fhjegjndanjcamfldhenjnhnjheecgcc),
-or build on your own with `npm run ext`.
+The `dist` folder is intentionally included in the Git repository to ensure CDN reliability. To contribute:
 
-## Contribute
+1. Make your changes in the `src` directory
+2. Run `npm run build` to rebuild the distribution files
+3. Commit both source changes and rebuilt dist files
+4. Submit a pull request
 
-Feel free to fork this repository and submit pull requests. Bugs report in
-[GitHub Issues](https://github.com/stevenlei/spacingjs/issues),
-features/ideas/questions discuss in [GitHub
-Discussions](https://github.com/stevenlei/spacingjs/discussions).
+### Get Involved
+- 🐛 Report bugs: [GitHub Issues](https://github.com/stevenlei/spacingjs/issues)
+- 💡 Share ideas: [GitHub Discussions](https://github.com/stevenlei/spacingjs/discussions)
+- ⭐ Star the repo if you find it useful!
 
 ## License
 
-Spacing.js is [MIT Licensed](LICENSE).
+SpacingJS is released under the [MIT License](LICENSE).
