@@ -11,6 +11,7 @@ let selectedElement: HTMLElement | null;
 let targetElement: HTMLElement | null;
 let delayedDismiss: boolean = false;
 let delayedRef: ReturnType<typeof setTimeout> | null = null;
+let isAltKeyDown: boolean = false;
 import { Spacing as SpacingType } from './type';
 
 const Spacing: SpacingType = {
@@ -42,33 +43,39 @@ function keyDownHandler(e: KeyboardEvent) {
     }
   }
 
-  if (!hoveringElement) return;
-
-  if (e.key === 'Alt' && !active) {
+  if (e.key === 'Alt') {
     e.preventDefault();
-    active = true;
-
-    setSelectedElement();
-    preventPageScroll(true);
+    isAltKeyDown = true;
+    
+    if (!active && hoveringElement) {
+      active = true;
+      setSelectedElement();
+      preventPageScroll(true);
+    }
   }
 
   if (e.shiftKey) delayedDismiss = true;
 }
 
 function keyUpHandler(e: KeyboardEvent) {
-  if (e.key === 'Alt' && active) {
-    delayedRef = setTimeout(
-      () => {
-        cleanUp();
-      },
-      delayedDismiss ? 3000 : 0
-    );
+  if (e.key === 'Alt') {
+    isAltKeyDown = false;
+    if (active) {
+      delayedRef = setTimeout(
+        () => {
+          cleanUp();
+        },
+        delayedDismiss ? 3000 : 0
+      );
+    }
   }
 }
 
 function cursorLeaveHandler(e: MouseEvent) {
   let to = e.relatedTarget as HTMLElement;
-  if (!to || to.nodeName == 'HTML') {
+  
+  // Only clean up if we're not holding Alt key and moving to a non-content area
+  if (!isAltKeyDown && (!to || to.nodeName === 'HTML')) {
     hoveringElement = null;
     cleanUp();
   }

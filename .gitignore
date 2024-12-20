@@ -1,2 +1,23 @@
+# Dependencies
 node_modules
 *.tgz
+
+# IDE
+.idea
+.vscode
+*.sublime-*
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage
+coverage/
